@@ -1,0 +1,25 @@
+// Place all the styles related to the guides controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.alignment-1 {
+  line-height: 70px;
+  vertical-align: middle;
+}
+.font-light {
+  font-weight: 200;
+}
+.mt-20{
+	margin-top: 20px
+}
+.line-height-30 {
+  line-height: 30;
+}
+
+[class*="emoji-"] {
+	font-size: 36px;
+}
+
+.how-to-use-wrapper {
+	margin-top:30px;
+}

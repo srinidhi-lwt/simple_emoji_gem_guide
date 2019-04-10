@@ -1,0 +1,55 @@
+<div class="container">
+
+  <div class="row mt-20">
+    <div class="col-sm-12">
+      <h3>Simple Emoji</h3>
+
+      <h5 class="font-light">A large collection of Ruby aliases for emojis and special symbols. Use Simple Emoji instead of using unreadable unicode characters starting with &#. Simple Emoji makes code readable and development easier.</h4>
+    </div>
+  </div>
+<div class="row how-to-use-wrapper">
+  <div class="col-sm-12">
+    <h4 class="font-light">Installation</h4>
+
+    <p class="font-light">Add this line to your application's Gemfile:</p>
+
+    <pre>
+    gem 'simple_emoji'
+
+    And then execute:
+    $ bundle
+
+    Or install it yourself as:
+    $ gem install simple_emoji
+    </pre>
+
+    <h4 class="font-light">How to use:</h4>
+    <pre>
+    emoji = SimpleEmoji::Index.new
+    emoji.grinning_face => 😀
+    emoji.winking_face => 😜
+    emoji.tears_of_joy => 😂
+    </pre>
+  </div>
+  <div class="card card-body bg-light">Below are the ruby aliases for emojis:</div>
+ </div>
+
+  <% @emojis.emoji_list.each_slice(2) do |emojis| %>
+    <div class="row">
+      <% emojis.each do |emoji| %>
+        <div class="col-sm-6 card card-body">
+          <div class="row">
+            <div class="col-sm-8">
+              <h6 class="alignment-1"><%= emoji[0] %></h4>
+            </div>
+
+            <div class="col-sm-4">
+              <p class="alignment-1"><%= content_tag(:span, emoji[1], { class: "emoji-#{emoji[0].dasherize}" }, false) %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+	<% end %>
+</div>
