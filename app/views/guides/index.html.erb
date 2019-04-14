@@ -31,10 +31,21 @@
     emoji.tears_of_joy => 😂
     </pre>
   </div>
-  <div class="card card-body bg-light">Below are the ruby aliases for emojis:</div>
+
+  <h4 class="font-light">Please select the type of Emoji</h4>
+
+  <div class="row mt-20">
+    <% @emojis.emoji_list.keys.each do |emoji_type| %>
+      <div class="col-sm-4">
+        <%= link_to category_title(emoji_type), root_path(emoji_type: emoji_type), class: "btn btn-light card #{'current-emoji-type' if emoji_type == @emoji_type}" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="card card-body bg-light mt-20">Below are the ruby aliases for <%= category_title(@emoji_type).upcase %>:</div>
  </div>
 
-  <% @emojis.emoji_list.each_slice(2) do |emojis| %>
+  <% @emojis_by_type.each_slice(2) do |emojis| %>
     <div class="row">
       <% emojis.each do |emoji| %>
         <div class="col-sm-6 card card-body">
@@ -51,5 +62,6 @@
       <% end %>
 
     </div>
-	<% end %>
+  <% end %>
+
 </div>
